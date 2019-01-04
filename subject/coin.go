@@ -11,7 +11,7 @@ const (
 
 type Coin struct {
 	attempts int64
-	groups   int64
+	members  int64
 	rand     *rand.Rand
 }
 
@@ -49,11 +49,11 @@ func (c *Coin) Check() (result CheckResult) {
 }
 
 func (c *Coin) SetGroupsNumber(n int64) {
-	c.groups = n
+	c.members = n
 }
 
 func (c *Coin) GetGroupsNumber() int64 {
-	return c.groups
+	return c.members
 }
 
 func (c *Coin) SetRand(r *rand.Rand) {

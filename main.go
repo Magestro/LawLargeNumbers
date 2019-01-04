@@ -24,11 +24,11 @@ func main() {
 	}
 
 	for _, context := range contexts {
-		fmt.Printf("for %d groups and %d attempts:\n", context.Groups, context.Attempts)
+		fmt.Printf("for %d groups and %d attempts:\n", context.Members, context.Attempts)
 
 		for _, subj := range subjects {
 			subj.SetAttemptsNumber(context.Attempts)
-			subj.SetGroupsNumber(context.Groups)
+			subj.SetMembersNumber(context.Members)
 			subj.SetRand(context.Rand)
 
 			result := subj.Check()
