@@ -21,6 +21,7 @@ func main() {
 		{10000, 100, r},
 		{100000, 100, r},
 		{1000000, 100, r},
+		{10000000, 100, r},
 
 		{100, 10, r},
 		{100, 100, r},
@@ -31,11 +32,11 @@ func main() {
 	}
 
 	for _, context := range contexts {
-		fmt.Printf("for %d groups and %d attempts:\n", context.Members, context.Attempts)
+		fmt.Printf("for %d groups and %d attempts:\n", context.Paricipants, context.Attempts)
 
 		for _, subj := range subjects {
 			subj.SetAttemptsNumber(context.Attempts)
-			subj.SetMembersNumber(context.Members)
+			subj.SetParicipantsNumber(context.Paricipants)
 			subj.SetRand(context.Rand)
 
 			result := subj.Check()

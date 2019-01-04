@@ -11,14 +11,14 @@ const (
 
 type Coin struct {
 	attempts int64
-	members  int64
+	paricipants  int64
 	rand     *rand.Rand
 }
 
 func (c *Coin) Check() (result CheckResult) {
 	result.ExceptedValue = coinExceptedValue
 
-	for i := int64(0); i < c.GetMembersNumber(); i++ {
+	for i := int64(0); i < c.GetParicipantsNumber(); i++ {
 		total := int64(0)
 		for j := int64(0); j < c.GetAttemptsNumber(); j++ {
 			if c.rand.Intn(2) > 0 {
@@ -37,23 +37,23 @@ func (c *Coin) Check() (result CheckResult) {
 	for _, value := range result.RealValues {
 		total += value
 	}
-	result.AverageValue = total / float64(c.GetMembersNumber())
+	result.AverageValue = total / float64(c.GetParicipantsNumber())
 
 	total = 0
 	for _, value := range result.RealPercents {
 		total += value
 	}
-	result.AveragePercent = total / float64(c.GetMembersNumber())
+	result.AveragePercent = total / float64(c.GetParicipantsNumber())
 
 	return
 }
 
-func (c *Coin) SetMembersNumber(n int64) {
-	c.members = n
+func (c *Coin) SetParicipantsNumber(n int64) {
+	c.paricipants = n
 }
 
-func (c *Coin) GetMembersNumber() int64 {
-	return c.members
+func (c *Coin) GetParicipantsNumber() int64 {
+	return c.paricipants
 }
 
 func (c *Coin) SetRand(r *rand.Rand) {

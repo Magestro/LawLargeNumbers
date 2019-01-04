@@ -6,7 +6,7 @@ import (
 
 type Context struct {
 	Attempts int64
-	Members  int64
+	Paricipants  int64
 	Rand     *rand.Rand
 }
 
@@ -23,9 +23,9 @@ type Interface interface {
 
 	GetAttemptsNumber() int64
 
-	SetMembersNumber(int64)
+	SetParicipantsNumber(int64)
 
-	GetMembersNumber() int64
+	GetParicipantsNumber() int64
 
 	SetRand(*rand.Rand)
 
